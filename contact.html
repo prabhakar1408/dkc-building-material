@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | DK Chaudhary Building Material &amp; Hardware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero" data-wave="bottom"><div class="container">
+  <div class="breadcrumb">Home / Contact Us</div><h1>Contact Us</h1><p>Apni requirement batayein &mdash; hum jaldi sampark karenge.</p>
+</div></section>
+<section class="container"><div class="info-cards">
+  <div class="info-card"><div class="icon">C</div><h3>Call Us</h3><p>+91 9919291985</p><a class="btn btn-red btn-sm" href="tel:+919919291985">Click to Call</a></div>
+  <div class="info-card"><div class="icon g">W</div><h3>WhatsApp</h3><p>Quick enquiry bhejiye</p><a class="btn btn-green btn-sm" href="https://wa.me/919919291985" target="_blank" rel="noopener">Chat Now</a></div>
+  <div class="info-card"><div class="icon d">V</div><h3>Visit Us</h3><p>Dihwa Chauraha, Barahua, Basti</p><a class="btn btn-dark btn-sm" href="https://www.google.com/maps/search/?api=1&query=Dihwa+Chauraha+Barahua+Basti" target="_blank" rel="noopener">Get Directions</a></div>
+</div></section>
+<section class="section"><div class="container contact-grid">
+  <div class="form-card">
+    <h2>Send Enquiry</h2>
+    <div class="sub">Form submit karne par enquiry seedha WhatsApp par jayegi.</div>
+    <form id="enquiryForm">
+      <label for="name">Full Name</label><input id="name" type="text" placeholder="Aapka poora naam" required>
+      <label for="phone">Phone Number</label><input id="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+      <label for="product">Product Required</label><input id="product" type="text" placeholder="Cement / Morang / Gitti / Sariya / Hardware">
+      <label for="msg">Message</label><textarea id="msg" placeholder="Apni requirement likhiye..."></textarea>
+      <button type="submit" class="btn btn-green">Send Enquiry on WhatsApp</button>
+    </form>
+  </div>
+  <div class="right-col">
+    <div class="detail-card">
+      <div class="detail-row"><div class="icon">C</div><div><small>COMPANY</small><span>DK Chaudhary Building Material &amp; Hardware</span></div></div>
+      <div class="detail-row"><div class="icon">P</div><div><small>PHONE</small><span>+91 9919291985</span></div></div>
+      <div class="detail-row"><div class="icon">A</div><div><small>ADDRESS</small><span>Dihwa Chauraha, Barahua, Basti, Uttar Pradesh, India</span></div></div>
+    </div>
+    <div class="map-card">
+      <div class="pin"></div><div class="place">Dihwa Chauraha, Barahua</div>
+      <a class="btn btn-red btn-sm" href="https://www.google.com/maps/search/?api=1&query=Dihwa+Chauraha+Barahua+Basti" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+  </div>
+</div></section>
+<div id="site-cta"></div>
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+<script>
+const pr = new URLSearchParams(location.search).get("product");
+if (pr) document.getElementById("product").value = pr;
+document.getElementById("enquiryForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const text = "Namaste, enquiry:\nNaam: " + document.getElementById("name").value +
+    "\nPhone: " + document.getElementById("phone").value +
+    "\nProduct: " + document.getElementById("product").value +
+    "\nMessage: " + document.getElementById("msg").value;
+  window.open(wa(text), "_blank");
+});
+</script>
+</body>
+</html>
