@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/effects.css">
+<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -45,6 +47,7 @@
 <div id="site-cta"></div>
 <div id="site-footer"></div>
 <script src="js/main.js"></script>
+<script src="js/effects.js"></script>
 <script>
 const pr = new URLSearchParams(location.search).get("product");
 if (pr) document.getElementById("product").value = pr;

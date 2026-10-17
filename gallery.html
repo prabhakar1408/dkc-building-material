@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/effects.css">
+<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -23,18 +25,19 @@
     <button class="filter-btn" data-f="Branding">Branding</button>
   </div>
   <div class="gallery-grid" id="gallery">
-    <div class="g-item g-big" data-cat="Branding"><img src="images/hero.png" alt="Building Materials" onerror="this.style.opacity=0"><span class="label">Building Materials</span></div>
-    <div class="g-item g-wide" data-cat="Cement"><img src="images/cement.jpg" alt="Cement" onerror="this.style.opacity=0"><span class="label">Cement</span></div>
-    <div class="g-item g-wide" data-cat="Sariya"><img src="images/sariya.jpg" alt="Sariya" onerror="this.style.opacity=0"><span class="label">Sariya</span></div>
-    <div class="g-item" data-cat="Morang & Gitti"><img src="images/morang.jpg" alt="Morang" onerror="this.style.opacity=0"><span class="label">Morang</span></div>
-    <div class="g-item" data-cat="Morang & Gitti"><img src="images/gitti.jpg" alt="Gitti" onerror="this.style.opacity=0"><span class="label">Gitti</span></div>
-    <div class="g-item" data-cat="Hardware"><img src="images/hardware.jpg" alt="Hardware" onerror="this.style.opacity=0"><span class="label">Hardware</span></div>
+    <div class="g-item g-big" data-cat="Branding"><img src="images/hero.png" alt="Building Materials" onerror="fb(this)"><span class="label">Building Materials</span></div>
+    <div class="g-item g-wide" data-cat="Cement"><img src="images/cement.jpg" alt="Cement" onerror="fb(this)"><span class="label">Cement</span></div>
+    <div class="g-item g-wide" data-cat="Sariya"><img src="images/sariya.jpg" alt="Sariya" onerror="fb(this)"><span class="label">Sariya</span></div>
+    <div class="g-item" data-cat="Morang & Gitti"><img src="images/morang.jpg" alt="Morang" onerror="fb(this)"><span class="label">Morang</span></div>
+    <div class="g-item" data-cat="Morang & Gitti"><img src="images/gitti.jpg" alt="Gitti" onerror="fb(this)"><span class="label">Gitti</span></div>
+    <div class="g-item" data-cat="Hardware"><img src="images/hardware.jpg" alt="Hardware" onerror="fb(this)"><span class="label">Hardware</span></div>
     <div class="g-item g-empty" data-cat="Branding">[APPROVED BUSINESS PHOTOS YAHAN ADD HONGE]</div>
   </div>
 </div></section>
 <div id="site-cta"></div>
 <div id="site-footer"></div>
 <script src="js/main.js"></script>
+<script src="js/effects.js"></script>
 <script>
 const grid = document.getElementById("gallery");
 document.querySelectorAll(".filter-btn").forEach(btn => {

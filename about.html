@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/effects.css">
+<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -22,8 +24,8 @@
     <div class="about-btns"><a class="btn btn-red" href="products.html">View Products</a><a class="btn btn-yellow" href="contact.html">Contact Us</a></div>
   </div>
   <div class="hero-art">
-    <img src="images/hero.png" alt="Building materials" onerror="this.style.opacity=0">
-    <div class="mini"><img src="images/gitti.jpg" alt="Gitti" onerror="this.style.opacity=0"></div>
+    <img src="images/hero.png" alt="Building materials" onerror="fb(this)">
+    <div class="mini"><img src="images/gitti.jpg" alt="Gitti" onerror="fb(this)"></div>
   </div>
 </div></section>
 <section class="section" style="padding-top:20px"><div class="container">
@@ -49,5 +51,6 @@
 <div id="site-cta"></div>
 <div id="site-footer"></div>
 <script src="js/main.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>

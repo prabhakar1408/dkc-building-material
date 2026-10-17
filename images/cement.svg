@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#efe3d0"/><rect y="150" width="200" height="50" fill="#d6c3a5"/>
+<g font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" text-anchor="middle" fill="#2a2a2a">
+<rect x="52" y="46" width="96" height="52" rx="9" fill="#d8b47a"/><rect x="52" y="76" width="96" height="8" fill="#c8141c"/><text x="100" y="68">CEMENT</text>
+<rect x="2" y="100" width="96" height="52" rx="9" fill="#cfa86a"/><rect x="2" y="130" width="96" height="8" fill="#c8141c"/><text x="50" y="122">CEMENT</text>
+<rect x="102" y="100" width="96" height="52" rx="9" fill="#d8b47a"/><rect x="102" y="130" width="96" height="8" fill="#c8141c"/><text x="150" y="122">CEMENT</text>
+</g></svg>

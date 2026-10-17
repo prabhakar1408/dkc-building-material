@@ -19,7 +19,7 @@ const NAV = [["Home","index.html"],["About","about.html"],["Products","products.
 
 function header() {
   return `<header class="header"><div class="container nav">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="DK Chaudhary" onerror="this.outerHTML='<span>DK Chaudhary</span>'"></a>
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="DK Chaudhary" onerror="fb(this)"></a>
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">${NAV.map(([n,h]) => `<a href="${h}" class="${page===h?"active":""}">${n}</a>`).join("")}</nav>
       <a class="btn btn-yellow btn-sm" href="tel:${CALL}">Call Now</a>
@@ -51,7 +51,7 @@ function footer() {
   </div></footer>`;
 }
 
-const img = (f, alt) => `<img src="images/${f}" alt="${alt}" loading="lazy" onerror="this.style.opacity=0">`;
+const img = (f, alt) => `<img src="images/${f}" alt="${alt}" loading="lazy" onerror="fb(this)">`;
 
 function renderCategories(el) {
   el.innerHTML = PRODUCTS.map(p => `<a class="cat" href="products.html"><div class="circle">${img(p.img,p.name)}</div>${p.name}</a>`).join("");
