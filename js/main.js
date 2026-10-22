@@ -70,7 +70,7 @@ function ctaBanner() {
 function footer() {
   return `<footer class="footer"><div class="container">
     <div class="footer-grid">
-      <div><a href="index.html" class="f-logo"><img src="images/logo.png" alt="DK Chaudhary" onerror="fb(this)"></a><p>Building Material &amp; Hardware<br>Dihwa Chauraha, Barahua, Basti,<br>Uttar Pradesh, India</p><p class="phone">+91 9919291985</p></div>
+      <div><a href="index.html" class="f-logo"><img src="images/logo.png" alt="DK Chaudhary" onerror="fb(this)"></a><p>Building Material &amp; Hardware<br>Dihwa Chauraha, Barahua, Basti,<br>Uttar Pradesh, India</p><p class="phone"><a href="tel:+919919291985">Call: +91 9919291985</a></p><p class="phone"><a href="mailto:dkchaudharybuildingmaterial@gmail.com">dkchaudharybuildingmaterial@gmail.com</a></p><p class="phone"><a href="https://www.instagram.com/dkchaudharybuildingmaterial" target="_blank" rel="noopener">Instagram: @dkchaudharybuildingmaterial</a></p></div>
       <div><h4>Pages</h4><ul>${NAV.map(([n,h])=>`<li><a href="${h}">${n}</a></li>`).join("")}</ul></div>
       <div><h4>Products</h4><ul>${PRODUCTS.map(p=>`<li><a href="${catLink(p.name)}">${p.name.replace(" Products","")}</a></li>`).join("")}</ul></div>
       <div><h4>Quick Enquiry</h4><p>Call ya WhatsApp par apni requirement batayein.</p><br><a class="btn btn-green btn-sm" href="${wa()}" target="_blank" rel="noopener">WhatsApp Us</a></div>
