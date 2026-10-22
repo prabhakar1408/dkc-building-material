@@ -2,16 +2,21 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Our Products | DK Chaudhary Building Material &amp; Hardware</title>
+<meta name="description" content="Cement, Morang, Gitti, Sariya aur Hardware - DK Chaudhary Building Material and Hardware, Barahua, Basti (UP).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/effects.css">
-<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/photos.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/theme2.css">
+<link rel="icon" href="images/logo.png">
+<script>function fb(i){var X=["jpg","jpeg","png","webp","svg"],m=i.src.match(/images\/([^\/?#]+)\.([a-z]+)(?:[?#]|$)/i);if(!m)return;var n=+i.dataset.t||0,c=m[2].toLowerCase();while(n<X.length&&X[n]===c)n++;if(n>=X.length){i.style.opacity=0;return;}i.dataset.t=n+1;i.src="images/"+m[1]+"."+X[n];}</script>
 </head>
-<body>
-<div id="site-header"></div>
+<body><div id="site-header"></div>
 <section class="page-hero" data-wave="bottom"><div class="container">
   <div class="breadcrumb">Home / Our Products</div><h1>Our Products</h1><p>Cement, Morang, Gitti, Sariya aur Hardware &mdash; sab ek jagah.</p>
 </div></section>
@@ -21,48 +26,75 @@
     <div class="help-card"><h3>Need Help?</h3><p>Rate aur availability ke liye humse baat karein.</p><a class="btn btn-yellow btn-sm" href="tel:+919919291985">Call Now</a></div>
   </aside>
   <div>
-    <input type="search" id="search" class="search" placeholder="Search products...">
+    <input type="search" id="search" class="search" placeholder="Search products... (jaise: ultratech, sariya, lock)">
     <div class="result-info" id="resultInfo"></div>
-    <div class="products-grid" id="pg"></div>
+    <div id="pg"></div>
   </div>
 </div></section>
 <div id="site-cta"></div>
-<div id="site-footer"></div>
-<script src="js/main.js"></script>
+<div id="site-footer"></div><script src="js/main.js"></script>
 <script src="js/effects.js"></script>
-<script>
-let activeCat = "All", query = "";
+<script src="js/gallery-data.js"></script>
+<script src="js/photos.js"></script><script>
+const params = new URLSearchParams(location.search);
+let activeCat = PRODUCTS.some(p => p.name === params.get("cat")) ? params.get("cat") : "All";
+let query = "";
 const sideCats = document.getElementById("sideCats");
 const grid = document.getElementById("pg");
 const info = document.getElementById("resultInfo");
 const search = document.getElementById("search");
 
+function setCat(c) {
+  activeCat = c; query = ""; search.value = "";
+  drawSidebar(); drawProducts();
+  search.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 function drawSidebar() {
   const items = [["All", "All Products (" + PRODUCTS.length + ")"]].concat(PRODUCTS.map(p => [p.name, p.name]));
   sideCats.innerHTML = items.map(([key, label]) =>
     `<button class="cat-btn ${activeCat === key ? "active" : ""}" data-cat="${key}">${label}</button>`).join("");
-  sideCats.querySelectorAll(".cat-btn").forEach(b => {
-    b.onclick = () => { activeCat = b.dataset.cat; drawSidebar(); drawProducts(); };
-  });
+  sideCats.querySelectorAll(".cat-btn").forEach(b => { b.onclick = () => setCat(b.dataset.cat); });
 }
-
 function drawProducts() {
-  const list = PRODUCTS.filter(p => (activeCat === "All" || p.name === activeCat) && (p.name + " " + p.desc).toLowerCase().includes(query));
-  info.textContent = list.length + " product categories \u00b7 Prices aur availability ke liye enquiry karein";
-  let html = list.map(p => `
-    <div class="product-card">
-      <div class="circle">${img(p.img, p.name)}</div>
-      <h3>${p.name}</h3><p>${p.desc}</p>
-      <div class="actions">
-        <a class="btn btn-red btn-sm" href="contact.html?product=${encodeURIComponent(p.name)}">Enquire Now</a>
-        <a class="btn btn-green btn-sm" target="_blank" rel="noopener" href="${wa("Namaste, mujhe " + p.name + " ki jaankari chahiye.")}">WhatsApp</a>
+  const moreCard = `<div class="more-card"><h3>Kuch Aur Chahiye?</h3><p>Hardware ya material ki requirement batayein.</p><a class="btn btn-yellow btn-sm" href="contact.html">Send Enquiry</a></div>`;
+  if (activeCat === "All" && !query) {
+    info.textContent = PRODUCTS.length + " product categories \u00b7 Prices aur availability ke liye enquiry karein";
+    grid.innerHTML = `<div class="cat-cards">` + PRODUCTS.map((p, i) => catCard(p, i, true)).join("") + moreCard + `</div>`;
+    return;
+  }
+  let shown = 0;
+  let html = PRODUCTS.filter(p => activeCat === "All" || p.name === activeCat).map(p => {
+    const items = p.items.filter(i => (p.name + " " + i.n + " " + i.s + " " + i.d).toLowerCase().includes(query));
+    if (!items.length) return "";
+    shown += items.length;
+    return `<section class="cat-block" style="--a1:${p.a1};--a2:${p.a2}">
+      <div class="cat-head">
+        <div class="circle">${img(p.img, p.name)}</div>
+        <div><h3>${p.name}</h3><p>${p.desc}</p></div>
+        <span class="count">${items.length} types</span>
       </div>
-    </div>`).join("");
-  if (!list.length) html = `<div class="no-result">Koi product nahi mila. Kuch aur search karein ya humse sampark karein.</div>`;
-  html += `<div class="more-card"><h3>Kuch Aur Chahiye?</h3><p>Hardware ya material ki requirement batayein.</p><a class="btn btn-yellow btn-sm" href="contact.html">Send Enquiry</a></div>`;
-  grid.innerHTML = html;
+      <div class="var-grid">${items.map(i => `
+        <div class="var-card">
+          ${pimg(i.k)}<div class="vt${/^[A-Za-z]/.test(i.i) ? " txt" : ""}">${i.i}</div>
+          <h4>${i.n}</h4>
+          <span class="spec">${i.s}</span>
+          <p>${i.d}</p>
+          <div class="actions">
+            <a class="btn btn-red btn-sm" href="contact.html?product=${encodeURIComponent(p.name + " - " + i.n)}">Enquire Now</a>
+            <a class="btn btn-green btn-sm" target="_blank" rel="noopener" href="${wa("Namaste, mujhe " + p.name + " (" + i.n + ") ki jaankari aur rate chahiye.")}">WhatsApp</a>
+          </div>
+        </div>`).join("")}</div>
+    </section>`;
+  }).join("");
+  if (!shown) html = `<div class="no-result">Koi product nahi mila. Kuch aur search karein ya humse sampark karein.</div>`;
+  html = `<button class="back-btn" data-cat="All">\u2190 Sab Categories</button>` + html;
+  info.textContent = shown + " product types \u00b7 Prices aur availability ke liye enquiry karein";
+  grid.innerHTML = html + moreCard;
 }
-
+grid.addEventListener("click", e => {
+  const b = e.target.closest("[data-cat]");
+  if (b) setCat(b.dataset.cat);
+});
 search.addEventListener("input", e => { query = e.target.value.trim().toLowerCase(); drawProducts(); });
 drawSidebar();
 drawProducts();

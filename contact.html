@@ -2,13 +2,17 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact Us | DK Chaudhary Building Material &amp; Hardware</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/effects.css">
-<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/photos.css">
+<script>function fb(i){var X=["jpg","jpeg","png","webp","svg"],m=i.src.match(/images\/([^\/?#]+)\.([a-z]+)(?:[?#]|$)/i);if(!m)return;var n=+i.dataset.t||0,c=m[2].toLowerCase();while(n<X.length&&X[n]===c)n++;if(n>=X.length){i.style.opacity=0;return;}i.dataset.t=n+1;i.src="images/"+m[1]+"."+X[n];}</script>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/theme2.css">
 </head>
 <body>
 <div id="site-header"></div>
@@ -60,5 +64,7 @@ document.getElementById("enquiryForm").addEventListener("submit", e => {
   window.open(wa(text), "_blank");
 });
 </script>
+<script src="js/gallery-data.js"></script>
+<script src="js/photos.js"></script>
 </body>
 </html>

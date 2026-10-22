@@ -1,0 +1,10 @@
+.cat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 20px;padding-top:46px}
+.cat-cards .product-card{position:relative;padding-top:60px}
+.cat-cards .product-card .circle{position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:100px;height:100px;margin:0}
+.cat-cards .product-card .actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+.cat-cards .product-card button.btn{font-family:inherit}
+.back-btn{display:inline-block;margin:6px 0 18px;border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:12px;background:#fff;color:var(--red-dark);padding:9px 20px;border-radius:999px;box-shadow:var(--shadow)}
+.back-btn:hover{background:var(--yellow-soft)}
+.result-info{margin-bottom:14px}
+@media(max-width:900px){.cat-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cat-cards{grid-template-columns:1fr}}

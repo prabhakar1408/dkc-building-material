@@ -1,0 +1,1 @@
+const GALLERY = [{"f":"dukaan-jhalak-1.jpeg","c":"Dukaan","t":"Dukaan ki Jhalak 1"},{"f":"dukaan-jhalak-2.jpeg","c":"Dukaan","t":"Dukaan ki Jhalak 2"},{"f":"dukaan-jhalak-3.jpeg","c":"Dukaan","t":"Dukaan ki Jhalak 3"}];

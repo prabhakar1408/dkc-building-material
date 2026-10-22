@@ -1,17 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About Us | DK Chaudhary Building Material &amp; Hardware</title>
+<meta name="description" content="Cement, Morang, Gitti, Sariya aur Hardware - DK Chaudhary Building Material and Hardware, Barahua, Basti (UP).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/effects.css">
-<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/photos.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/theme2.css">
+<link rel="icon" href="images/logo.png">
+<script>function fb(i){var X=["jpg","jpeg","png","webp","svg"],m=i.src.match(/images\/([^\/?#]+)\.([a-z]+)(?:[?#]|$)/i);if(!m)return;var n=+i.dataset.t||0,c=m[2].toLowerCase();while(n<X.length&&X[n]===c)n++;if(n>=X.length){i.style.opacity=0;return;}i.dataset.t=n+1;i.src="images/"+m[1]+"."+X[n];}</script>
 </head>
-<body>
-<div id="site-header"></div>
+<body><div id="site-header"></div>
 <section class="page-hero" data-wave="bottom"><div class="container">
   <div class="breadcrumb">Home / About Us</div><h1>About Us</h1><p>Mazboot nanv, bharosemand saathi.</p>
 </div></section>
@@ -23,9 +28,10 @@
     <p class="note">[COMPANY STORY &mdash; client se confirm karke yahan add hoga]</p>
     <div class="about-btns"><a class="btn btn-red" href="products.html">View Products</a><a class="btn btn-yellow" href="contact.html">Contact Us</a></div>
   </div>
-  <div class="hero-art">
-    <img src="images/hero.png" alt="Building materials" onerror="fb(this)">
-    <div class="mini"><img src="images/gitti.jpg" alt="Gitti" onerror="fb(this)"></div>
+  <div class="hero-art shop">
+    <img src="images/gallery/dukaan-jhalak-2.jpeg" alt="DK Chaudhary dukaan" onerror="this.onerror=null;this.src='images/gallery/dukaan-jhalak-2.jpeg'">
+    <span class="shop-badge b1">&#128205; Dihwa Chauraha, Barahua</span>
+    <span class="shop-badge b2">&#10004; Registered Company</span>
   </div>
 </div></section>
 <section class="section" style="padding-top:20px"><div class="container">
@@ -49,8 +55,10 @@
   </div>
 </div></section>
 <div id="site-cta"></div>
-<div id="site-footer"></div>
-<script src="js/main.js"></script>
+<div id="site-footer"></div><script src="js/main.js"></script>
 <script src="js/effects.js"></script>
+<script src="js/gallery-data.js"></script>
+<script src="js/photos.js"></script>
 </body>
 </html>
+

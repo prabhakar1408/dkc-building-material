@@ -2,53 +2,40 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gallery | DK Chaudhary Building Material &amp; Hardware</title>
+<meta name="description" content="Cement, Morang, Gitti, Sariya aur Hardware - DK Chaudhary Building Material and Hardware, Barahua, Basti (UP).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/effects.css">
-<script>function fb(i){if(i.dataset.f)return;i.dataset.f=1;var m=i.src.match(/images\/([^\/?#.]+)\.[a-z]+/i);if(m)i.src="images/"+m[1]+".svg";}</script>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/photos.css">
+<link rel="stylesheet" href="css/fix.css">
+<link rel="stylesheet" href="css/theme2.css">
+<link rel="icon" href="images/logo.png">
+<script>function fb(i){var X=["jpg","jpeg","png","webp","svg"],m=i.src.match(/images\/([^\/?#]+)\.([a-z]+)(?:[?#]|$)/i);if(!m)return;var n=+i.dataset.t||0,c=m[2].toLowerCase();while(n<X.length&&X[n]===c)n++;if(n>=X.length){i.style.opacity=0;return;}i.dataset.t=n+1;i.src="images/"+m[1]+"."+X[n];}</script>
 </head>
-<body>
-<div id="site-header"></div>
+<body><div id="site-header"></div>
 <section class="page-hero" data-wave="bottom"><div class="container">
   <div class="breadcrumb">Home / Gallery</div><h1>Gallery</h1><p>Hamare material, products aur business ki jhalak.</p>
 </div></section>
-<section class="section" style="padding-top:30px"><div class="container">
-  <div class="filters">
-    <button class="filter-btn active" data-f="All">All</button>
-    <button class="filter-btn" data-f="Cement">Cement</button>
-    <button class="filter-btn" data-f="Morang & Gitti">Morang &amp; Gitti</button>
-    <button class="filter-btn" data-f="Sariya">Sariya</button>
-    <button class="filter-btn" data-f="Hardware">Hardware</button>
-    <button class="filter-btn" data-f="Branding">Branding</button>
-  </div>
-  <div class="gallery-grid" id="gallery">
-    <div class="g-item g-big" data-cat="Branding"><img src="images/hero.png" alt="Building Materials" onerror="fb(this)"><span class="label">Building Materials</span></div>
-    <div class="g-item g-wide" data-cat="Cement"><img src="images/cement.jpg" alt="Cement" onerror="fb(this)"><span class="label">Cement</span></div>
-    <div class="g-item g-wide" data-cat="Sariya"><img src="images/sariya.jpg" alt="Sariya" onerror="fb(this)"><span class="label">Sariya</span></div>
-    <div class="g-item" data-cat="Morang & Gitti"><img src="images/morang.jpg" alt="Morang" onerror="fb(this)"><span class="label">Morang</span></div>
-    <div class="g-item" data-cat="Morang & Gitti"><img src="images/gitti.jpg" alt="Gitti" onerror="fb(this)"><span class="label">Gitti</span></div>
-    <div class="g-item" data-cat="Hardware"><img src="images/hardware.jpg" alt="Hardware" onerror="fb(this)"><span class="label">Hardware</span></div>
-    <div class="g-item g-empty" data-cat="Branding">[APPROVED BUSINESS PHOTOS YAHAN ADD HONGE]</div>
+<section class="section" style="padding-top:34px"><div class="container">
+  <div class="section-head"><span class="tag">Gallery</span><h2>Hamari <span>Dukaan</span> Ki Jhalak</h2><p>Dihwa Chauraha, Barahua &mdash; cement, sariya, morang, gitti aur hardware, sab ek jagah.</p></div>
+  <div class="filters" id="filters"></div>
+  <div class="gallery-grid" id="gallery"></div>
+  <div class="visit">
+    <div><h3>Hamari Dukaan Par Aaiye</h3><p>Dihwa Chauraha, Barahua, Basti, Uttar Pradesh</p></div>
+    <div class="visit-btns">
+      <a class="btn btn-yellow btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Dihwa+Chauraha+Barahua+Basti" target="_blank" rel="noopener">Get Directions</a>
+      <a class="btn btn-green btn-sm" href="https://wa.me/919919291985" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
 </div></section>
 <div id="site-cta"></div>
-<div id="site-footer"></div>
-<script src="js/main.js"></script>
+<div id="site-footer"></div><script src="js/main.js"></script>
 <script src="js/effects.js"></script>
-<script>
-const grid = document.getElementById("gallery");
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.onclick = () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    const f = btn.dataset.f;
-    grid.classList.toggle("filtered", f !== "All");
-    grid.querySelectorAll(".g-item").forEach(i => { i.style.display = (f === "All" || i.dataset.cat === f) ? "" : "none"; });
-  };
-});
-</script>
+<script src="js/gallery-data.js"></script>
+<script src="js/photos.js"></script>
 </body>
 </html>
