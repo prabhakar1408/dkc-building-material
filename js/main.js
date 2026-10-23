@@ -120,3 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("menuBtn");
   if (btn) btn.onclick = () => document.getElementById("navLinks").classList.toggle("open");
 });
+
+/* ---- header with Call / WhatsApp / Mail icons (mobile) ---- */
+const EMAIL = ""; // yahan apna email likho, jaise "dkchaudhary@gmail.com" (khali = mail icon nahi dikhega)
+const PHONE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>';
+const MAIL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>';
+function header() {
+  const mail = EMAIL ? `<a class="hc hc-mail" href="mailto:${EMAIL}?subject=Enquiry" aria-label="Email">${MAIL_ICON}</a>` : "";
+  return `<header class="header"><div class="container nav">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="DK Chaudhary" onerror="fb(this)"></a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">${NAV.map(([n,h]) => `<a href="${h}" class="${page===h?"active":""}">${n}</a>`).join("")}</nav>
+      <a class="btn btn-yellow btn-sm" href="tel:${CALL}">Call Now</a>
+      <a class="btn btn-green btn-sm" href="${wa()}" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="hdr-contact">
+        <a class="hc hc-call" href="tel:${CALL}" aria-label="Call">${PHONE_ICON}</a>
+        <a class="hc hc-wa" href="${wa()}" target="_blank" rel="noopener" aria-label="WhatsApp">${WA_ICON}</a>
+        ${mail}
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+    </div></div></header>`;
+}

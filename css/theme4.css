@@ -1,0 +1,81 @@
+:root{--red:#e8344e;--red-dark:#c71f39;--yellow:#ffbe0b;--yellow-soft:#fff0c2;--green:#00b36a;--green-dark:#007a49;--black:#2e0c14;--text:#2b0a10;--shadow:0 14px 34px rgba(200,31,57,.14)}
+body{padding-bottom:0!important}
+.fabs{display:none!important}
+.fs,.cube-wrap{display:none!important}
+
+/* ---------- buttons ---------- */
+.btn-red{background:linear-gradient(180deg,#ff6a7e,#e32a44);box-shadow:0 5px 0 #a8162c,0 12px 22px rgba(232,52,78,.35)}
+.btn-green{background:linear-gradient(180deg,#27e391,#00b36a);box-shadow:0 5px 0 #007d49,0 12px 22px rgba(0,200,120,.4)}
+.btn-dark{background:linear-gradient(180deg,#9a2238,#5a1322);box-shadow:0 5px 0 #320912,0 12px 22px rgba(90,19,34,.35)}
+.btn-red:active{box-shadow:0 2px 0 #a8162c}.btn-green:active{box-shadow:0 2px 0 #007d49}.btn-dark:active{box-shadow:0 2px 0 #320912}
+.nav-links a.active{background:linear-gradient(135deg,#ff6a7e,#e8344e);box-shadow:0 6px 14px rgba(232,52,78,.4)}
+.nav-links a:not(.active):hover{background:#ffeef0;color:var(--red)}
+
+/* ---------- hero (lighter red) ---------- */
+.hero,.page-hero{background:
+  radial-gradient(rgba(255,255,255,.1) 1.5px,transparent 1.6px) 0 0/26px 26px,
+  radial-gradient(760px 440px at 90% 4%,rgba(255,200,40,.5),transparent 62%),
+  radial-gradient(620px 440px at 55% 105%,rgba(255,130,150,.5),transparent 66%),
+  linear-gradient(135deg,#f5485f 0%,#e5314a 45%,#cc2038 100%)}
+.hindi{color:var(--red-dark)}
+.breadcrumb{color:#ffe27a}
+
+/* ---------- PROFESSIONAL PHOTO FRAME ---------- */
+.hero-art.shop{width:min(560px,100%);aspect-ratio:16/11.5;margin:auto;animation:pop .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-art.shop::before{content:"";position:absolute;inset:-36px;border:0;border-radius:50%;z-index:0;animation:none;
+  background:radial-gradient(closest-side,rgba(255,255,255,.3),rgba(255,255,255,0) 72%)}
+.hero-art.shop::after{content:"";position:absolute;inset:-14px;border-radius:0;z-index:0;pointer-events:none;
+  background:
+   linear-gradient(#ffbe0b,#ffbe0b) top left/52px 4px no-repeat,
+   linear-gradient(#ffbe0b,#ffbe0b) top left/4px 52px no-repeat,
+   linear-gradient(#fff,#fff) bottom right/52px 4px no-repeat,
+   linear-gradient(#fff,#fff) bottom right/4px 52px no-repeat}
+.hero-art.shop>img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 35%;
+  border-radius:22px;border:6px solid #fff;background:#fff;box-shadow:0 28px 60px rgba(90,0,15,.45)}
+.shop-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:6px;background:#fff;color:#2b0a10;font-weight:600;font-size:12px;
+  padding:9px 14px;border-radius:12px;box-shadow:0 12px 28px rgba(60,0,10,.28);white-space:nowrap}
+.shop-badge.b1{left:-14px;bottom:-14px;top:auto;right:auto}
+.shop-badge.b2{right:-12px;top:-14px;bottom:auto;left:auto;background:linear-gradient(135deg,#27e391,#00a65a);color:#fff}
+
+/* ---------- green (vivid emerald) ---------- */
+.cta-card.red{background:linear-gradient(135deg,#00a86b,#1fdc8c)}
+.cta-card.dark{background:linear-gradient(135deg,#7a1428,#c42a40)}
+.cta-card.dark::after{background:rgba(255,190,11,.9)}
+.why{background:linear-gradient(135deg,#00875a,#00c37a 55%,#00a86b);background-size:300% 300%}
+.why .tag{color:#007a49}
+.pc-wa{background:linear-gradient(180deg,#27e391,#00b36a);box-shadow:0 4px 0 #007d49}
+.chip:nth-child(3n+2) i{background:#c8f7df;color:#00774a}
+.showcase::after{background:rgba(0,200,120,.16)}
+.info-card .icon.g{background:#00b36a}
+
+/* ---------- lighter red / wine surfaces ---------- */
+.stats{background:linear-gradient(135deg,#9a1d33,#d02a43 60%,#ea4058)}
+.cta-banner{background:linear-gradient(135deg,#f0455b,#c9223c)}
+.more-card{background:linear-gradient(135deg,#7a1428,#c42a40)}
+.help-card{background:linear-gradient(135deg,#7a1428,#c42a40)}
+.visit{background:linear-gradient(135deg,#7a1428,#c42a40)}
+.cat-btn.active{background:linear-gradient(135deg,#ff6a7e,#e8344e);box-shadow:0 6px 14px rgba(232,52,78,.35)}
+.footer{background:linear-gradient(180deg,#3b1019,#240a10);border-top:6px solid var(--yellow)}
+.num{background:linear-gradient(135deg,#ff6a7e,#e32a44)}
+
+/* ---------- header contact icons (mobile) ---------- */
+.hdr-contact{display:none;align-items:center;gap:8px}
+.hc{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 10px rgba(16,24,40,.18)}
+.hc svg{width:20px;height:20px;fill:currentColor}
+.hc-call{background:linear-gradient(135deg,#ff6a7e,#e8344e)}
+.hc-wa{background:#25d366}
+.hc-mail{background:#7a1428}
+.menu-btn{width:40px;height:40px;border-radius:12px;border:1px solid #eee;background:#fff;color:var(--red);font-size:20px;line-height:1;align-items:center;justify-content:center}
+
+@media(max-width:900px){
+  .hdr-contact{display:flex}
+  .nav{padding:8px 0}
+  .logo img{height:46px}
+  .nav-right{gap:8px}
+  .hero-art.shop{width:100%;margin-top:30px}
+  .hero-art.shop::before{inset:-18px}
+  .hero-art.shop::after{inset:-8px}
+  .shop-badge{font-size:11px;padding:8px 12px}
+  .shop-badge.b1{left:6px;bottom:-12px}
+  .shop-badge.b2{right:6px;top:-12px}
+}

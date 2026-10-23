@@ -57,7 +57,7 @@
           const r = s.getBoundingClientRect();
           const x = (e.clientX - r.left) / r.width - 0.5;
           const y = (e.clientY - r.top) / r.height - 0.5;
-          a.style.transform = "perspective(900px) rotateY(" + (x * 14) + "deg) rotateX(" + (-y * 14) + "deg)";
+          a.style.transform = "perspective(900px) rotateY(" + (x * 6) + "deg) rotateX(" + (-y * 6) + "deg)";
           $$(".fs", s).forEach((f, i) => {
             f.style.transform = "translate(" + (x * (i % 3 + 1) * 18) + "px," + (y * (i % 3 + 1) * 18) + "px)";
           });
@@ -90,7 +90,7 @@
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width;
         const y = (e.clientY - r.top) / r.height;
-        el.style.transform = "perspective(800px) rotateX(" + ((0.5 - y) * 12) + "deg) rotateY(" + ((x - 0.5) * 12) + "deg) scale(1.03)";
+        el.style.transform = "perspective(800px) rotateX(" + ((0.5 - y) * 5) + "deg) rotateY(" + ((x - 0.5) * 5) + "deg) scale(1.015)";
         el.style.setProperty("--gx", (x * 100) + "%");
         el.style.setProperty("--gy", (y * 100) + "%");
       });
@@ -104,6 +104,6 @@
     fab.innerHTML =
       '<a class="fab fab-call" href="tel:' + CALL + '" aria-label="Call Now">' + PHI + '<span>Call Now</span></a>' +
       '<a class="fab fab-wa" href="' + wa() + '" target="_blank" rel="noopener" aria-label="WhatsApp">' + WAI + '<span>WhatsApp</span></a>';
-    document.body.appendChild(fab);
+    /* floating contact buttons removed */
   });
 })();
