@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ---- header with Call / WhatsApp / Mail icons (mobile) ---- */
-const EMAIL = ""; // yahan apna email likho, jaise "dkchaudhary@gmail.com" (khali = mail icon nahi dikhega)
+const EMAIL = "dkchaudharybuildingmaterial@gmail.com"; // yahan apna email likho, jaise "dkchaudhary@gmail.com" (khali = mail icon nahi dikhega)
 const PHONE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>';
 const MAIL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>';
 function header() {
@@ -151,3 +151,119 @@ document.addEventListener("DOMContentLoaded", () => {
     if (b && l && /Main Categories/.test(l.textContent)) b.textContent = n;
   });
 });
+/* ==== DKC_FOOTER_WA_START ==== */
+(function () {
+  var NUM = "919919291985";
+  var TEL = "+919919291985";
+  var MAIL = "dkchaudharybuildingmaterial@gmail.com";
+  var IG_USER = "dkchaudharybuildingmaterial";
+  var MAPS = "https://www.google.com/maps/search/?api=1&query=Dihwa+Chauraha+Barahua+Basti";
+
+  var I_PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
+  var I_PHONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>';
+  var I_MAIL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>';
+  var I_IG = '<svg class="st" viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+  var I_SEND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>';
+
+  /* ---------- footer ---------- */
+  function row(href, icon, text, ext) {
+    return '<li><a class="ft-row" href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '><span class="ft-ic">' + icon + '</span><span>' + text + '</span></a></li>';
+  }
+  function footerHTML() {
+    var pages = [["Home", "index.html"], ["About", "about.html"], ["Products", "products.html"], ["Gallery", "gallery.html"], ["Contact", "contact.html"]]
+      .map(function (p) { return '<li><a href="' + p[1] + '">' + p[0] + '</a></li>'; }).join("");
+    var names = (typeof PRODUCTS !== "undefined" && PRODUCTS.length) ? PRODUCTS.map(function (p) { return p.name; }) : ["Cement", "Morang", "Gitti", "Chhad / Sariya", "Hardware Products"];
+    var prods = names.map(function (n) {
+      return '<li><a href="products.html?cat=' + encodeURIComponent(n) + '">' + n.replace(" Products", "") + '</a></li>';
+    }).join("");
+    var waIcon = (typeof WA_ICON !== "undefined") ? WA_ICON : "";
+    return '<footer class="footer ft"><div class="container">' +
+      '<div class="ft-grid">' +
+        '<div class="ft-brand">' +
+          '<a href="index.html" class="ft-logo" aria-label="DK Chaudhary"><img src="images/logo.png" alt="DK Chaudhary Building Material and Hardware" onerror="fb(this)"></a>' +
+          '<p class="ft-about">Cement, Morang, Gitti, Sariya aur Hardware &mdash; ghar aur construction ki har zaroorat ek hi jagah.</p>' +
+          '<a class="btn btn-green btn-sm ft-wa" href="https://wa.me/' + NUM + '" target="_blank" rel="noopener">' + waIcon + 'WhatsApp Us</a>' +
+        '</div>' +
+        '<nav class="ft-col"><h4>Pages</h4><ul>' + pages + '</ul></nav>' +
+        '<nav class="ft-col"><h4>Products</h4><ul>' + prods + '</ul></nav>' +
+        '<div class="ft-col ft-contact"><h4>Contact</h4><ul class="ft-ci">' +
+          row(MAPS, I_PIN, 'Dihwa Chauraha, Barahua, Basti,<br>Uttar Pradesh, India', true) +
+          row('tel:' + TEL, I_PHONE, '+91 99192 91985') +
+          row('mailto:' + MAIL + '?subject=Enquiry', I_MAIL, MAIL) +
+          row('https://www.instagram.com/' + IG_USER + '/', I_IG, '@' + IG_USER, true) +
+        '</ul></div>' +
+      '</div>' +
+      '<div class="ft-bottom"><span>&copy; 2026 DK Chaudhary Building Material &amp; Hardware. All rights reserved.</span><span>Barahua &middot; Basti &middot; Uttar Pradesh</span></div>' +
+    '</div></footer>';
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var html = footerHTML();
+    var slot = document.getElementById("site-footer");
+    if (slot) { slot.innerHTML = html; }
+    else { var old = document.querySelector("footer"); if (old) old.outerHTML = html; }
+  });
+
+  /* ---------- whatsapp chat popup ---------- */
+  var box = null, field = null;
+  function send() {
+    var t = field.value.trim() || "Namaste Ji, mujhe building material ki jaankari chahiye.";
+    window.open("https://wa.me/" + NUM + "?text=" + encodeURIComponent(t), "_blank", "noopener");
+    field.value = "";
+    closePop();
+  }
+  function closePop() { if (box) box.classList.remove("open"); }
+  function build() {
+    var d = new Date(), h = d.getHours(), m = d.getMinutes();
+    var tm = (h % 12 || 12) + ":" + (m < 10 ? "0" : "") + m + " " + (h >= 12 ? "pm" : "am");
+    box = document.createElement("div");
+    box.className = "wap";
+    box.innerHTML =
+      '<div class="wap-card" role="dialog" aria-label="WhatsApp chat">' +
+        '<div class="wap-head"><div class="wap-av"><img src="images/logo.png" alt="" onerror="fb(this)"></div>' +
+          '<div><b>DK Chaudhary Building Material</b><small>Online</small></div>' +
+          '<button class="wap-x" type="button" aria-label="Close">&times;</button></div>' +
+        '<div class="wap-body"><div class="wap-msg">&#2344;&#2350;&#2360;&#2381;&#2340;&#2375; &#2332;&#2368; &#128591;<br>&#2310;&#2346;&#2325;&#2366; &#2360;&#2381;&#2357;&#2366;&#2327;&#2340; &#2361;&#2376; &#2330;&#2380;&#2343;&#2352;&#2368; &#2348;&#2367;&#2354;&#2381;&#2337;&#2367;&#2306;&#2327; &#2350;&#2335;&#2375;&#2352;&#2367;&#2351;&#2354;&#2381;&#2360; &#2350;&#2375;&#2306;&#128522;<br>&#2361;&#2350; &#2310;&#2346;&#2325;&#2368; &#2325;&#2381;&#2351;&#2366; &#2360;&#2361;&#2366;&#2351;&#2340;&#2366; &#2325;&#2352; &#2360;&#2325;&#2340;&#2375; &#2361;&#2376;&#2306;?<i>' + tm + '</i></div></div>' +
+        '<form class="wap-form"><input type="text" placeholder="Write something..." autocomplete="off" aria-label="Message">' +
+          '<button class="wap-send" type="submit" aria-label="Send">' + I_SEND + '</button></form>' +
+      '</div>';
+    document.body.appendChild(box);
+    field = box.querySelector("input");
+    box.querySelector(".wap-x").onclick = closePop;
+    box.addEventListener("click", function (e) { if (e.target === box) closePop(); });
+    box.querySelector("form").addEventListener("submit", function (e) { e.preventDefault(); send(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePop(); });
+  }
+  function openPop() {
+    if (!box) build();
+    box.classList.add("open");
+    setTimeout(function () { field.focus(); }, 120);
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="https://wa.me/"]') : null;
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    var q = a.getAttribute("href").split("?text=")[1] || "";
+    var txt = "";
+    try { txt = decodeURIComponent(q); } catch (x) {}
+    if (txt.indexOf("ki jaankari") > -1) return;
+    e.preventDefault();
+    openPop();
+  });
+})();
+/* ==== DKC_FOOTER_WA_END ==== */
+/* ==== DKC_WAP_VV_START ==== */
+(function () {
+  var vv = window.visualViewport;
+  function fit() {
+    var card = document.querySelector(".wap.open .wap-card");
+    if (!card) return;
+    if (!vv || window.innerWidth > 600) { card.style.bottom = ""; card.style.maxHeight = ""; return; }
+    var gap = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
+    card.style.bottom = gap + "px";
+    card.style.maxHeight = Math.max(240, vv.height - 12) + "px";
+  }
+  if (vv) { vv.addEventListener("resize", fit); vv.addEventListener("scroll", fit); }
+  window.addEventListener("resize", fit);
+  document.addEventListener("focusin", function () { setTimeout(fit, 250); });
+  document.addEventListener("click", function () { setTimeout(fit, 60); });
+})();
+/* ==== DKC_WAP_VV_END ==== */
